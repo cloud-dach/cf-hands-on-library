@@ -1,3 +1,0 @@
-[submodule "java-server"]
-	path = java-server
-	url = git@github.com:florae123/library-server-java-user-adjusted.git
