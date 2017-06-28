@@ -1,6 +1,6 @@
 # Library application
 
-This is a sample application running on IBM Bluemix. It allows you to store, delete and update books and customers and register borrowed books.
+This is a sample application running on IBM Bluemix. It allows you to store, delete and update books and customers, and register borrowed books.
 
 It includes the Watson Conversation Service as well as the TextToSpeech Service.
 
