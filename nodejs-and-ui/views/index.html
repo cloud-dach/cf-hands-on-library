@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="otherStyle.css"> <!-- otherStyle or myStyle.css -->
+  <script src="js/jquery.bootstrap-growl.min.js"></script>
+  <!--<script src="js/general.js"></script>-->
+  <script src="js/booksketch.js"></script>
+  <script src="js/customerSketch.js"></script>
+  <script src="js/rentalSketch.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/watson-speech.js"></script>
+  <script src="js/general.js"></script>
+  <script>
+
+    var rootURLspeechNode;
+    var rootURLstartConv;
+    var rootURLconChat;
+    startLibrary();
+  </script>
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+  <nav class="navbar navbar-custom">
+    <div class="navbar-header">
+      Library
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a data-toggle="tab" href="#home" id="homeLink">Home</a></li>
+      <li><a data-toggle="tab" href="#bookdiv" id="bookLink">Books</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-10">
+      <div class="panel panel-default">
+        <div class="panel-body" id="intro-panel">
+          <div>
+            <h1>Welcome to the Library!</h1>
+            <h2>You are currently not logged in.</h2>
+            <p>Log in to access further app functionalities.</p>
+          </div>
+          <div class="text-center">
+              <a href="/protected">
+                  <button class="btn btn-default" id="login-btn">Login</button>
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="row">
+
+    <div class="tab-content">
+
+      <div class="tab-pane fade" id="home"></div>
+
+      <div class="tab-pane fade" id="bookdiv">
+
+
+
+        <div class="col-sm-offset-1 col-sm-10">
+          <div class="panel panel-default">
+            <div a href="#bookTableToggle" data-toggle="collapse" id="toggleHeaderBookTable" class="toggleHeader panel-heading">
+              <h2>Registered books</h2>
+            </div>
+
+            <div class="collapse" id="bookTableToggle">
+              <div class="panel-body">
+                <table class="table table-hover bookTable">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Authors</th>
+                      <th>ISBN</th>
+                      <th>More</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bookTableRows">
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

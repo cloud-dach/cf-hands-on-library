@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="js/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="otherStyle.css">
+  <script src="js/jquery.bootstrap-growl.min.js"></script>
+  <!--<script src="js/general.js"></script>-->
+  <script src="js/booksketch.js"></script>
+  <script src="js/customerSketch.js"></script>
+  <script src="js/rentalSketch.js"></script>
+  <script src="js/conversation.js"></script>
+  <script src="js/watson-speech.js"></script>
+  <script src="js/general.js"></script>
+  <script>
+    var profileImg = '<%- picture %>';
+    $(document).ready(function(){
+      document.getElementById('profileImage').src = '<%- picture %>';
+    });
+    var userEmail = '<%- email %>';
+    var userName = '<%- name %>';
+    console.log("email: "+userEmail +", name: "+userName);
+    var rootURLspeechNode;
+    var rootURLstartConv;
+    var rootURLconChat;
+    var userCustomerId;
+    if(userEmail != null) {
+      console.log("starting...");
+      startLibrary();
+    }
+  </script>
+
+</head>
+<body>
+
+<!--<div class="container-fluid">
+  <div class="page-header">
+    <h1>Welcome to the library</h1>
+  </div>
+</div>-->
+
+
+<div class="container-fluid">
+  <nav class="navbar navbar-custom">
+    <div class="navbar-header">
+      Library
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a data-toggle="tab" href="#home" id="homeLink">Home</a></li>
+      <li><a data-toggle="tab" href="#bookdiv" id="bookLink">Books</a></li>
+      <li><a data-toggle="tab" href="#customerDiv" id="custlink">Customer</a></li>
+      <li><a data-toggle="tab" href="#rentalsDiv" id="rentalsLink">Borrow books</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="panel panel-default" id="convPanel">
+        <div a data-toggle="collapse" href="#collapseChat" id="chatToggle" class="toggleHeader panel-heading" >
+          <h2>Chat</h2>
+        </div>
+        <div id="collapseChat" class="panel-collapse collapse">
+          <div class="panel-body conversationBody" id="conversationBody">
+            <!--<div class="row">
+              <div class="col-sm-offset-7">
+                <button type="button" class="btn btn-default" id="convStart">Start Conversation</button>
+              </div>
+            </div>-->
+            <div id="convText">
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <textarea class="form-control" rows="2" id="convUserText" placeholder="Enter Answer"></textarea>
+                </div>
+                <div class="col-sm-offset-10">
+                    <button type="button" class="btn btn-default" id="convSubmit">
+                      <span class="glyphicon glyphicon-comment"></span>
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+    <div class="tab-content">
+
+      <div class="tab-pane fade" id="home">
+
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-body">
+                <h2 class="media-heading">Hello <%= name %></h2>
+                <p></p>
+                <p>Your email address: <%= email %>.</p>
+                <p>To log out, click
+                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#logoutModal" id="logout-btn">
+                    here</button>
+                </p>
+              </div>
+              <div class="media-right">
+                <!--<img src="images/anonymous.svg" class="media-object" style="width:60px">-->
+                <img id="profileImage" class="media-object" style="width:60px" src="images/anonymous.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="logoutModal" role="dialog">
+          <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body" style="font-size:large">
+                <p>Logout? <a href="/logout">
+                  <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-ok"></span></button>
+                  </a></p>
+              </div>
+              <div class="modal-footer">
+              <!--  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="tab-pane fade" id="bookdiv">
+
+
+        <div class="panel panel-default">
+          <div a href="#bookTableToggle" data-toggle="collapse" id="toggleHeaderBookTable" class="toggleHeader panel-heading">
+            <h2>Registered books</h2>
+          </div>
+
+          <div class="collapse" id="bookTableToggle">
+            <div class="panel-body">
+              <table class="table table-hover bookTable">
+                <thead>
+                  <tr>
+                    <th class="pleaseHideThis">ID</th>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>ISBN</th>
+                    <th>More</th>
+                  </tr>
+                </thead>
+                <tbody id="bookTableRows">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="tab-pane fade" id="customerDiv">
+
+
+        <div class="panel panel-default">
+          <div a href="#custTableToggle" data-toggle="collapse" class="toggleHeader panel-heading">
+            <h2>Registered data</h2>
+          </div>
+          <div class="collapse" id="custTableToggle">
+            <div class="panel-body">
+              <table class="table table-hover customerTable">
+                <thead>
+                  <tr>
+                    <th name="idName">ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody id="customerTableRows">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tab-pane fade" id="rentalsDiv">
+
+        <div class="panel panel-default">
+          <div a href="#RentalAddToggle" data-toggle="collapse" class="toggleHeader panel-heading addRentalToggle">
+            <h2>Borrow a book</h2>
+          </div>
+          <div class="collapse" id="RentalAddToggle">
+            <div class="panel-body">
+              <form class="form-horizontal">
+                <!--<div class="form-group">
+                  <label class="control-label col-sm-2" for="rentalId">ID:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control rentalInput" id="rentalId" placeholder="Enter ID">
+                  </div>
+                </div>-->
+                <div class="form-group">
+                  <!--<label class="control-label col-sm-2" for="rentalbookid">Book ID:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control rentalInput" id="rentalbookid" placeholder="Enter Book ID">
+                  </div>-->
+                  <label class="control-label col-sm-2" for="selBid">Book ID:</label>
+                  <div class="col-sm-5">
+                   <select class="form-control" id="selBid">
+                   </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="start">Start Date:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control rentalInput" id="start" placeholder="YYYY-MM-DD">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="end">End Date:</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control rentalInput" id="end" placeholder="YYYY-MM-DD">
+                  </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-2">
+                      <button type="button" class="btn btn-default" id="addNewrental">borrow book</button>
+                    </div>
+                    <!--<div class="col-sm-1">
+                      <button type="button" class="btn btn-default" id="updateRental">update</button>
+                    </div>-->
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="panel panel-default">
+          <div a href="#RentalTableToggle" data-toggle="collapse" class="toggleHeader panel-heading rentalsTableToggle">
+            <h2>Registered borrowed Books</h2>
+          </div>
+          <div class="collapse" id="RentalTableToggle">
+            <div class="panel-body">
+              <table class="table table-hover" data-unique-id="rentalUniqueId">
+                <thead>
+                  <tr>
+                    <th data-field="rentalUniqueId" class="pleaseHideThis">ID</th>
+                    <th data-field="bookid">Book</th>
+                    <th data-field="start">Start</th>
+                    <th data-field="end">End</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="rentalsTableRows">
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <script>$('.pleaseHideThis').hide();
+        </script>
+
+        <div class="panel panel-default">
+          <div a href="#RentalsRemoveToggle" data-toggle="collapse" class="toggleHeader panel-heading">
+            <h2>Return all books</h2>
+          </div>
+          <div class="collapse" id="RentalsRemoveToggle">
+            <div class="panel-body bigpopover">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-2">
+                    <button type="button" class="btn btn-default" data-toggle="popover" id="deleteAllRentalsbtn">Return all</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

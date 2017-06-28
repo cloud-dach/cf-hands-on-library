@@ -1,0 +1,130 @@
+/*colors: 1:#376151 2:#B7E6D4 3:#7FE0BD 4:#166146 5:#54957D #D6E6E1 */
+/*new colors: 1: F1F3D6 2: F3C58D 3: A7652E 4: 3E1300 5: BF2412 */
+body {
+  color: #3E1300;
+  /*background-image: url(https://www.brickrow.com/images/upload/carousel_4_1.jpg);*/
+  background-image: url("images/bookshelf.jpg");
+}
+#intro-panel {
+  text-align: center;
+}
+#login-btn {
+  padding: 10px 40px;
+}
+#login-btn-out {
+  padding: 10px 40px;
+}
+#convText {
+  font-style: italic;
+}
+.deleteDescription {
+  display: none;
+  position: absolute;
+}
+.popover{
+    max-width: 100%;
+}
+.popoverContent {
+  padding: 20px;
+  /*background-color: #B7E6D4;*/
+  background-color: #F1F3D6;
+  /*box-shadow: inset 0 0 0 20px lightGreen;*/
+}
+.popover-content {
+  overflow: auto;
+  background-color: #F1F3D6;
+}
+.btn.btn-default {
+  /*background-color: #376151;*/
+  background-color: #F3C58D;
+  color: #3E1300;
+  border: none;
+}
+.modal-content {
+  background-color: #F1F3D6;
+  border-color: #F1F3D6;
+  overflow: auto;
+}
+#logout-panel {
+  margin-top:40px;
+  margin-bottom:40px;
+  margin-left:30px;
+  margin-right:30px;
+  text-align: center;
+}
+.panel {
+  border-color: #A7652E;
+}
+.panel-body {
+  /*background-color: #B7E6D4;*/
+  background-color: #F1F3D6;
+  overflow: auto;
+}
+.conversationBody {
+  /*min-height: 10%;
+  max-height: 10%;*/
+  min-height: 150px;
+  max-height: 450px;
+  overflow-y: scroll;
+}
+#chatToggle {
+  /*background-color: #BF2412;*/
+}
+.panel-body.bigpopover {
+  overflow: visible !important;
+}
+.panel-footer {
+  /*background-color: #54957D;*/
+  background-color: #A7652E;
+}
+.toggleHeader.panel-heading {
+  /*background-color: #54957D;*/
+  background-color: #A7652E;
+  color: #F1F3D6;
+  cursor: pointer;
+}
+table {
+  overflow: auto;
+}
+.table > tbody > tr:hover {
+  background-color: #FFFFF6;
+}
+.table td{
+  border-bottom: #F3C58D solid 1px !important;
+}
+.table th{
+  border-bottom: #F3C58D solid 2px !important;
+}
+.dateTd {
+  min-width: 90px;
+}
+/*navbar*/
+.navbar-custom {
+  /*background-color: #376151;*/
+  background-color: #3E1300;
+  border-color: #3E1300;
+  /*height: 60px;*/
+}
+.navbar-custom .navbar-header {
+  color: #BF2412;
+  padding: 20px;
+  padding-right: 35px;
+  padding-left: 35px;
+  font-size: x-large;
+}
+.navbar-custom .navbar-nav > li > a {
+    padding: 27px;
+    padding-left: 35px;
+    padding-right: 35px;
+    color: #F1F3D6;
+    /*#E6FFEF;
+    #E8FAEF;*/
+}
+.navbar-custom .navbar-nav > .active > a/*, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus*/ {
+    color: #3E1300;
+    background-color: #F3C58D;
+}
+.navbar-custom .navbar-nav > li > a:hover {
+  color: #BF2412;
+  background-color: #F3C58D;
+}/*navbar end*/

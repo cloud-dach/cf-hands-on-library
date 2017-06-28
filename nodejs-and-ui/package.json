@@ -1,0 +1,27 @@
+{
+  "name": "libraryui",
+  "version": "1.0.0",
+  "description": "small webui for libarary api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Flora Eggers",
+  "license": "ISC",
+  "dependencies": {
+    "bluemix-appid": "^1.0.3",
+    "body-parser": "^1.16.1",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "log4js": "^1.1.1",
+    "passport": "^0.3.2",
+    "passport-idaas-openidconnect": "^2.0.1",
+    "pug": "^2.0.0-rc.1",
+    "request": "^2.79.0",
+    "watson-developer-cloud": "^2.18.0"
+  }
+}
