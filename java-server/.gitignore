@@ -1,0 +1,6 @@
+target/
+src/main/java/com/example/library/Conversation.java
+src/main/java/com/example/library/Text_To_Speech.java
+src/main/java/com/example/library/BasicAuthInterceptor.java
+vcap-env.json 
+/.apt_generated/

@@ -1,0 +1,24 @@
+{
+  "_id": "cc0184b1-eeec-4b35-bee4-cdae185c802b",
+  "id": "cc0184b1-eeec-4b35-bee4-cdae185c802b",
+  "isbn": "0385515049",
+  "authors": [
+    "John Grisham"
+  ],
+  "title": "The appeal",
+  "tags": [
+    "Fiction",
+    "Chemical industry",
+    "Environmental aspects",
+    "Corrupt practices",
+    "Trials (Offenses against the environment)",
+    "Waste disposal",
+    "Corporations",
+    "OverDrive",
+    "Literature",
+    "Thriller",
+    "Large type books"
+  ],
+  "picture": "https://covers.openlibrary.org/b/id/7891176-M.jpg",
+  "about_the_book": "In a crowded courtroom in Mississipi, a jury returns a shocking verdict against a chemical company accused of dumping toxic waste into a small town's water supply, causing the worst cancer cluster in history. The company appeals to the Mississippi Supreme Court, whose nine justices will one day either approve the verdict or reverse it. Who are the nine? How will they vote? Can one be replaced before the case is ultimately decided?"
+}

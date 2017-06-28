@@ -1,0 +1,11 @@
+{
+  "_id": "_design/CustomerIdx",
+  "views": {},
+  "language": "javascript",
+  "indexes": {
+    "emailSearch": {
+      "analyzer": "standard",
+      "index": "function (doc) {\n  index(\"default\", doc.email);\n}"
+    }
+  }
+}

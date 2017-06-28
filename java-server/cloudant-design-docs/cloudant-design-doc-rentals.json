@@ -1,0 +1,11 @@
+{
+  "_id": "_design/RentalIdx",
+  "views": {},
+  "language": "javascript",
+  "indexes": {
+    "customerSearch": {
+      "analyzer": "standard",
+      "index": "function (doc) {\n  index(\"default\", doc.customerid);\n}"
+    }
+  }
+}
