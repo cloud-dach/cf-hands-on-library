@@ -14,7 +14,7 @@ To run the app, please create an instance of a Cloudant NoSQL Database, a Conver
 
 These repositories will also provide you with step-by-step instructions on how to deploy the library app to Bluemix. There are two options to deploy the application to Bluemix:
   * You can deploy both cloud foundry apps, first the java app and then the node.js app.
-  * You can also choose to deploy only the node.js app and connect it to an existing, running back end server with a connected database. In that case, your starting point is the *Librayui-v2* repository.
+  * You can also choose to deploy only the node.js app and connect it to an existing, running back end server with a connected database. In that case, your starting point is the *Libraryui-v2* repository.
 
 **Watch the video on YouTube for further information about this application. Note that the video refers to an older version of the demo app [https://github.com/florae123/LibraryApp](https://github.com/florae123/LibraryApp): [https://www.youtube.com/watch?v=NqF2wIMBqBw](https://www.youtube.com/watch?v=NqF2wIMBqBw).**
 
