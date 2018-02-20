@@ -6,11 +6,11 @@ It includes the Watson Conversation Service as well as the TextToSpeech Service.
 
 To run the app, please create an instance of a Cloudant NoSQL Database, a Conversation Service, a TextToSpeech Service and an App ID service.
 
-**View a running sample of the app [here](https://libraryui-demo-1.mybluemix.net/).**
+**Watch the video on YouTube for further information about this application. _Note:_ That the video refers to an older version of the demo app  [https://www.youtube.com/watch?v=NqF2wIMBqBw](https://www.youtube.com/watch?v=NqF2wIMBqBw).**
 
-**Find the Java backend in this repository: [https://github.com/florae123/library-server-java-v2](https://github.com/florae123/library-server-java-v2).**
+**Find the Java backend in this repository: [https://github.com/cloud-dach/cf-hands-on-LibraryServer](https://github.com/cloud-dach/cf-hands-on-LibraryServer).**
 
-**Find the Node.js server and the web interface here: [https://github.com/florae123/Libraryui-v2](https://github.com/florae123/Libraryui-v2).**
+**Find the Node.js server and the web interface here: [https://github.com/cloud-dach/cf-hands-on-LibraryUI](https://github.com/cloud-dach/cf-hands-on-LibraryUI).**
 
 These repositories will also provide you with step-by-step instructions on how to deploy the library app to Bluemix. There are two options to deploy the application to Bluemix:
   * You can deploy both cloud foundry apps, first the java app and then the node.js app.
